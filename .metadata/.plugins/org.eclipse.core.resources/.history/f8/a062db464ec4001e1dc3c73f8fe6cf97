@@ -1,0 +1,21 @@
+package br.gov.am.prodam.folha.routes;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import org.springframework.util.RouteMatcher.Route;
+
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+
+@Repository
+public interface RoutesApiConfigRepository extends JpaRepository<RoutesApiConfig, Long>{
+
+    @PersistenceContext
+    private EntityManager em;
+
+    public RoutesApiConfig salvar(RoutesApiConfig routes) {
+        return em.merge(routes);
+    }
+
+    // Outros métodos de consulta, atualização, exclusão, etc.
+}

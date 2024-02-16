@@ -1,0 +1,40 @@
+package com.api.gateway.apigatewayservice.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
+import com.api.gateway.apigatewayservice.model.RouteConfig;
+import com.api.gateway.apigatewayservice.service.RouteConfigService;
+
+import jakarta.ws.rs.NotFoundException;
+
+@RestController
+public class GatewayController {
+
+    @Autowired
+    private RouteConfigService routeConfigService;
+    private final RestTemplate restTemplate;
+
+    public GatewayController(RestTemplate restTemplate) {
+        this.restTemplate = restTemplate;
+    }
+
+    @GetMapping("/api/{serviceName}/{path}")
+    public String forwardRequest(@PathVariable String serviceName, @PathVariable String path) {
+        RouteConfig routeConfig = routeConfigService.getRouteConfig(serviceName);
+        if (routeConfig == null) {
+            throw new NotFoundException("Service not found: " + serviceName);
+        }
+        String serviceUrl = "http://" + routeConfig.getUri() + "/" + path;
+        //String serviceUrl = "http://" + serviceName + "/" + path; 
+        return restTemplate.getForObject(serviceUrl, String.class);
+    }
+
+    @GetMapping("/api/")
+    public String testeString() {
+        return "I'm here!";
+    }
+}

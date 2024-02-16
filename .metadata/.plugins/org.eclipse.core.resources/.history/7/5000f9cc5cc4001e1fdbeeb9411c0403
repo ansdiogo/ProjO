@@ -1,0 +1,56 @@
+package br.gov.am.prodam.folha.routes;
+
+import java.util.List;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+
+@RestController
+@RequestMapping("/routes")
+public class RoutesApiConfigController {
+
+    private final RoutesApiConfigRepository routeRepository;
+
+    public RoutesApiConfigController(RoutesApiConfigRepository routeRepository) {
+        this.routeRepository = routeRepository;
+    }
+
+    @PostMapping
+    public ResponseEntity<RoutesApiConfig> create(@RequestBody RoutesApiConfig route123) {
+        if (route123.getId() == null || route123.getUri() == null || route123.getPredicates() == null || route123.getFilters() == null) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+        return new ResponseEntity<>(routeRepository.save(route123), HttpStatus.CREATED);
+    }
+
+
+    @GetMapping
+    public List<RoutesApiConfig> getAll() {
+        return routeRepository.findAll();
+    }
+}
+/*
+@RestController
+public class RoutesApiConfigController {
+
+    private final RoutesApiConfigService apiConfigService;
+
+    @Autowired
+    public RoutesApiConfigController(RoutesApiConfigService apiConfigService) {
+        this.apiConfigService = apiConfigService;
+    }
+
+    @PostMapping("/routes")
+    public RoutesApiConfig criarApiConfig(@RequestBody RoutesApiConfig apiConfig) {
+        return apiConfigService.salvarApiConfig(apiConfig);
+    }
+
+    // Outros endpoints e métodos de controle
+}
+*/

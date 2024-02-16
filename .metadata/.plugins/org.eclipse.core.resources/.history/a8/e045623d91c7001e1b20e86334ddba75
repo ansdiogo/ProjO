@@ -1,0 +1,32 @@
+# eureka client
+spring.application.name= folha-gateway-routes-ms
+server.port=8011
+#spring.application.h2.console.settings.trace= true
+eureka.client.service-url.default-zone= ${EUREKA_URI:http://localhost:8762/eureka/}
+eureka.instance.prefer-ip-address= true
+# OracleDB connection settings
+spring.datasource.url= jdbc:oracle:thin:@//10.20.1.175:1521/oradds.prodam.com.br		
+spring.datasource.username=dbsispag
+spring.datasource.password=xuyib7lba4es
+spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
+# HikariCP settings
+spring.datasource.hikari.minimumIdle=5
+spring.datasource.hikari.maximumPoolSize=20
+spring.datasource.hikari.idleTimeout=30000
+spring.datasource.hikari.maxLifetime=2000000
+spring.datasource.hikari.connectionTimeout=30000
+spring.datasource.hikari.poolName=FolhaPool
+# JPA settings
+#spring.jpa.database-platform=org.hibernate.dialect.Oracle12cDialect
+#spring.jpa.generate-ddl=false
+spring.jpa.hibernate.ddl-auto=none
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.OracleDialect
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.default_schema=DBSISPAG
+spring.jpa.properties.hibernate.jdbc.batch_size=5
+#spring.jpa.properties.hibernate.hql.bulk_id_strategy=hibernate.hql.bulk_id_strategy.global_temporary.drop_tables
+#spring.jpa.properties.hibernate.hql.bulk_id_strategy= org.hibernate.hql.spi.id.inline.InlineIdsInClauseBulkIdStrategy
+# Set Your Context Path Here
+server.servlet.context-path=/ 
+#folha-calculo-service
+

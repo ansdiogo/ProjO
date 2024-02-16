@@ -1,0 +1,29 @@
+package br.gov.am.prodam.folha.routes;
+
+import javax.sql.DataSource;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.jdbc.core.JdbcTemplate;
+
+@SpringBootApplication
+public class RoutesApiConfigApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(RoutesApiConfigApplication.class, args);
+	}
+	private final JdbcTemplate jdbcTemplate;
+
+    public RoutesApiConfigApplication(DataSource dataSource) {
+        this.jdbcTemplate = new JdbcTemplate(dataSource);
+    }
+
+    public void createTable() {
+        jdbcTemplate.execute("CREATE TABLE FOLHA_ROUTES (id INT PRIMARY KEY, uri VARCHAR(255), predicates VARCHAR(255), filters VARCHAR(255))");
+    }
+
+    public void insertData() {
+        jdbcTemplate.update("INSERT INTO routes (id, uri, predicates, filters) VALUES (?, ?, ?, ?)", 1, "http://localhost:6061", "[{\"name\": \"Path\", \"args\": {\"_genkey_0\": \"/rest/\"}}]", "[{\"name\": \"StripPrefix\", \"args\": {\"_genkey_0\": \"1\"}}, {\"name\": \"RequestSize\", \"args\": {\"maxSize\": \"5000000\"}}]");
+        jdbcTemplate.update("INSERT INTO routes (id, uri, predicates, filters) VALUES (?, ?, ?, ?)", 2, "http://localhost:8761", "[{\"name\": \"Path\", \"args\": {\"_genkey_0\": \"/rest/**\"}}]", "[{\"name\": \"StripPrefix\", \"args\": {\"_genkey_0\": \"1\"}}, {\"name\": \"RequestSize\", \"args\": {\"maxSize\": \"5000000\"}}]");
+    }
+}

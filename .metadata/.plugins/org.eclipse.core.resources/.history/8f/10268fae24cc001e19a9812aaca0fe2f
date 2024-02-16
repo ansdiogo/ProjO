@@ -1,0 +1,26 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: API-GATEWAY-SERVICE
+  cloud: 
+    gateway: 
+      routes:
+        - id: FOLHA-CALCULO-SERVICE
+          uri: http://localhost:6061
+          predicates: 
+            - Path=/
+          filters:
+            - StripPrefix=1
+            - name: RequestSize
+              args:
+                maxSize: 5000000
+  datasource:
+    url: jdbc:oracle:thin:@//10.20.1.175:1521/oradds.prodam.com.br
+    username: dbsispag
+    password: xuyib7lba4es
+    driver-class-name: oracle.jdbc.OracleDriver
+  jpa:
+    hibernate:
+      ddl-auto: update # none
+    show-sql: true

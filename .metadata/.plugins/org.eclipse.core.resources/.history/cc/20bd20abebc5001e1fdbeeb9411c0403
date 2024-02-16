@@ -1,0 +1,27 @@
+package br.gov.am.prodam.folha.routes.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import br.gov.am.prodam.folha.routes.model.RoutesApiConfig;
+import br.gov.am.prodam.folha.routes.repository.RoutesApiConfigRepository;
+
+@Service
+public class RoutesApiConfigService {
+    private final RoutesApiConfigRepository repository;
+
+    @Autowired
+    public RoutesApiConfigService(RoutesApiConfigRepository repository) {
+        this.repository = repository;
+    }
+
+    public RoutesApiConfig save(RoutesApiConfig route123) {
+        return repository.save(route123);
+    }
+
+    public List<RoutesApiConfig> findAll() {
+        return repository.findAll();
+    }
+}

@@ -1,0 +1,27 @@
+package com.api.gateway.apigatewayservice.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.api.gateway.apigatewayservice.model.RouteConfig;
+import com.api.gateway.apigatewayservice.repository.RouteConfigRepository;
+
+@Service
+public class RouteConfigService {
+	private final RouteConfigRepository routeConfigRepository;
+
+	@Autowired
+	public RouteConfigService(RouteConfigRepository routeConfigRepository) {
+		this.routeConfigRepository = routeConfigRepository;
+	}
+
+	public List<RouteConfig> getAllRouteConfigs() {
+		return routeConfigRepository.findAll();
+	}
+
+	public RouteConfig getRouteConfig(String serviceName) {
+        return routeConfigRepository.findById(serviceName).orElse(null);
+    }
+}

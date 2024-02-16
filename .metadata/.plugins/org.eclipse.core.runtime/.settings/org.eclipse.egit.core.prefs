@@ -1,0 +1,4 @@
+GitRepositoriesView.GitDirectories=C\:\\Users\\Diogo\\eclipse-workspace\\folha-oracle-to-json-api\\.git;C\:\\Users\\Diogo\\eclipse-workspace\\folha-calculo-ms\\.git;C\:\\Users\\Diogo\\eclipse-workspace\\folha-parametrizacao-api\\.git;C\:\\Users\\Diogo\\eclipse-workspace\\eureka-server\\.git;C\:\\Users\\Diogo\\eclipse-workspace\\ImportCSVoracle\\.git;C\:\\Users\\Diogo\\eclipse-workspace\\folha-gateway-routes-ms\\.git;C\:\\Users\\Diogo\\eclipse-workspace\\.git;C\:\\Users\\Diogo\\eclipse-workspace\\api-gateway-service\\.git;
+GitRepositoriesView.GitDirectories.relative=folha-oracle-to-json-api\\.git;folha-calculo-ms\\.git;folha-parametrizacao-api\\.git;eureka-server\\.git;ImportCSVoracle\\.git;folha-gateway-routes-ms\\.git;.git;api-gateway-service\\.git;
+core_autoIgnoreDerivedResources=false
+eclipse.preferences.version=1

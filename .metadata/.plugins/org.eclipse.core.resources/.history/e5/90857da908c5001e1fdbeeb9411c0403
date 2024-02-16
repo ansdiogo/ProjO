@@ -1,0 +1,11 @@
+package br.gov.am.prodam.folhacalculoms.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import br.gov.am.prodam.folhacalculoms.model.GanhosDescontos;
+
+@Repository
+public interface GanhosDescontosRepository extends JpaRepository<GanhosDescontos, Long> {
+    // Aqui você pode adicionar consultas personalizadas se necessário
+}

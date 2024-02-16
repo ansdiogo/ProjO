@@ -1,0 +1,1237 @@
+package br.gov.am.prodam.folhacalculoms.model;
+
+import java.io.Serializable;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "CFPP_GANHOS_DESCONTOS") 
+public class GanhosDescontos implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@Column(name="TB_ORGAO_GANDES")
+	private Integer orgaoGandes;
+
+	@Column(name="TB_ORGAO")
+	private Integer orgao;
+
+	@Column(name="TB_COD_GD")
+	private Integer codGd;
+
+	@Column(name="COD_RUB")
+	private Integer codRub;
+
+	@Column(name="TB_NOME_OUTRAS_INC")
+	private String nomeOutrasInc;
+
+	@Column(name="TB_HORA_REATIV")
+	private String horaReativ;
+
+	@Column(name="TB_COD_TAB")
+	private String codTab;
+
+	@Column(name="TB_TETO_PERC")
+	private String tetoPerc;
+
+	@Column(name="TB_TETO_OUTROS")
+	private String tetoOutros;
+
+	@Column(name="TB_PRE_REQ")
+	private String preReq;
+
+	@Column(name="TB_VERSAO_TAB")
+	private String versaoTab;
+
+	@Column(name="TB_TIPO_CADASTRAMENTO")
+	private String tipoCadastramento;
+
+	@Column(name="TB_TAB_GANDESC")
+	private String tabGandesc;
+
+	@Column(name="TB_COD_CONSIG")
+	private String codConsig;
+
+	@Column(name="TB_COD_GRUPO_EMPENHO")
+	private String codGrupoEmpenho;
+
+	@Column(name="TB_HORA_INC")
+	private String horaInc;
+
+	@Column(name="TB_HORA_ALT")
+	private String horaAlt;
+	
+	@Column(name="TB_HORA_EXC")
+	private String horaExc;
+
+	@Column(name="TB_CLASSIFICACAO_DIRF_RAIS")
+	private String classificacaoDirfRais;
+
+	@Column(name="TB_TIPO_DOTACAO")
+	private String tipoDotacao;
+
+	@Column(name="TB_ORGAO_GANDESC_SIST_ANT")
+	private String orgaoGandescSistAnt;
+
+	@Column(name="TB_TIPO_INF_COMPL")
+	private String tipoInfCompl;
+
+	@Column(name="TB_TIT_COMPL")
+	private String titCompl;
+
+	@Column(name="TB_TIT_ABREV")
+	private String titAbrev;
+
+	@Column(name="TB_TIT_CERTIDAO")
+	private String titCertidao;
+
+	@Column(name="TB_GAN_INC")
+	private String ganInc;
+
+	@Column(name="TB_VAN_INC")
+	private String vanInc;
+
+	@Column(name="TB_DESC_INC")
+	private String descInc;
+
+	@Column(name="TB_INPS_INC")
+	private String inpsInc;
+
+	@Column(name="TB_IPASEA_INC")
+	private String ipaseaInc;
+	
+	@Column(name="TB_IREN_INC")
+	private String irenInc;
+
+	@Column(name="TB_FGTS_INC")
+	private String fgtsInc;
+
+	@Column(name="TB_CONTRI_SIND_INC")
+	private String contriSindInc;
+
+	@Column(name="TB_PERIC_INC")
+	private String pericInc;
+
+	@Column(name="TB_LIQ_MIN")
+	private String liqMin;
+
+	@Column(name="TB_13SAL_INC")
+	private String salInc;	
+
+	@Column(name="TB_CEDULA_C")
+	private String cedulaC;
+
+	@Column(name="TB_IND_RELCOD")
+	private String indRelcod;
+
+	@Column(name="TB_PROPORC")
+	private String proporc;
+
+	@Column(name="TB_OUTRAS_INC")
+	private String outrasInc;
+
+	@Column(name="TB_RAIS")
+	private String rais;
+
+	@Column(name="TB_IND_CADASTRADO")
+	private String indCadastrado;
+
+	@Column(name="TB_TP_INFOR")
+	private String tpInfor;
+
+	@Column(name="TB_REGRA_CALC")
+	private String regraCalc;
+
+	@Column(name="TB_TETO_HR")
+	private String tetoHr;
+
+	@Column(name="TB_TETO_VLR")
+	private String tetoVlr;
+
+	@Column(name="TB_ORD_CALC")
+	private String ordCalc;
+
+	@Column(name="TB_CARACTERI")
+	private String characteri;
+
+	@Column(name="TB_IND_TAB_CALC")
+	private String indTabCalc;
+
+	@Column(name="TB_DT_ULT_UTILIZACAO")
+	private String dtUltUtilizacao;
+
+	@Column(name="TB_COD_VINC_GD")
+	private String codVincGd;
+
+	@Column(name="TB_SIT_GANDES")
+	private String sitGandes;
+
+	@Column(name="TB_TIT_PESQ02")
+	private String titPesq02;
+
+	@Column(name="TB_CAMPO_INATIVO01")
+	private String campoInativo01;
+
+	@Column(name="TB_RESTRICAO_ATUALIZACAO")
+	private String restricaoAtualizacao;
+
+	@Column(name="TB_OPERADOR_INC")
+	private String operadorInc;
+
+	@Column(name="TB_DATA_INC")
+	private String dataInc;
+
+	@Column(name="TB_OPERADOR_ALT")
+	private String operadorAlt;
+
+	@Column(name="TB_DATA_ALT")
+	private String dataAlt;
+
+	@Column(name="TB_OPERADOR_EXC")
+	private String operadorExc;
+
+	@Column(name="TB_DATA_EXC")
+	private String dataExc;
+
+	@Column(name="TB_OPERADOR_REATIV")
+	private String operadorReativ;
+
+	@Column(name="TB_DATA_REATIV")
+	private String dataReativ;
+
+	@Column(name="TB_EXECUCAO_TETO__NAO_USADO")
+	private String execucaoTetoNaoUsado;
+
+	@Column(name="TB_INCIDE_TETO__NAO_USADO")
+	private String incideTetoNaoUsado;
+
+	@Column(name="TB_MARGEM_INC")
+	private String margemInc;
+
+	@Column(name="TB_VALE_TRANSP_INC")
+	private String valeTranspInc;
+
+	@Column(name="TB_TETO_INC")
+	private String tetoInc;
+
+	@Column(name="TB_13SAL_CC_INC")
+	private String salCcInc;
+
+	@Column(name="TB_DOCUMENTO")
+	private String documento;
+
+	@Column(name="TB_ABONO_NATALINO")
+	private String abonoNatalino;
+
+	@Column(name="TB_INSS_13SAL")
+	private String inssSal;
+
+	@Column(name="TB_AMAZON_13SAL")
+	private String amazonSal;
+
+	@Column(name="TB_IR_13SAL")
+	private String irSal;
+
+	@Column(name="TB_FERIAS")
+	private String ferias;
+
+	@Column(name="TB_FERIAS_CC")
+	private String feriasCc;
+
+	@Column(name="TB_FGTS_13SAL")
+	private String fgtsSal;
+
+	@Column(name="TB_FALTAS")
+	private String faltas;
+
+	@Column(name="TB_SAL_FAM")
+	private String salFam;
+
+	@Column(name="TB_AUX_ALIM")
+	private String auxAlim;
+
+	@Column(name="TB_NATUREZA_RUBRICA")
+	private String naturezaRubrica;
+
+	@Column(name="TB_CARAC_NOVA")
+	private String caracNova;
+
+	@Column(name="TB_TIPO_AGRUPAMENTO")
+	private String tipoAgrupamento;
+
+	@Column(name="TB_CLASSIF_GAN")
+	private String classifGan;
+
+	@Column(name="TB_RESCISAO")
+	private String rescisao;
+
+	@Column(name="TB_EMPREGADOR_ID")
+	private String empregadorId;
+
+	@Column(name="TB_VALIDADO_ESOCIAL")
+	private String validadoEsocial;
+
+	@Column(name="TB_TPRUBR_ESOCIAL")
+	private String tprubrEsocial;
+
+	@Column(name="TB_CARGO_COMISSIONADO")
+	private String cargoComissionado;
+
+	@Column(name="TB_CODINCCP_CODIGO_ESOCIAL")
+	private String codinccpCodigoEsocial;
+
+	@Column(name="TB_CODINCIRRF_CODIGO_ESOCIAL")
+	private String codincirrfCodigoEsocial;
+
+	@Column(name="TB_CODINCFGTS_CODIGO_ESOCIAL")
+	private String codincfgtsCodigoEsocial;
+
+	@Column(name="TB_CODINCSIND_CODIGO_ESOCIAL")
+	private String codincsindCodigoEsocial;
+
+	@Column(name="TB_OBSERVACAO_ESOCIAL")
+	private String observacaoEsocial;
+
+	@Column(name="TB_CODINCRM_CODIGO_ESOCIAL")
+	private String codincrmCodigoEsocial;
+
+	@Column(name="TB_TETOREMUN_ESOCIAL")
+	private String tetoremunEsocial;
+
+	@Column(name="TB_PENSAO")
+	private String pensao;
+
+	@Column(name="TB_TIPO_CODIGO")
+	private String tipoCodigo;
+
+	@Column(name="TB_MANAUSMED")
+	private String manausmed;
+
+	@Column(name="TB_MANAUSMED_MANT")
+	private String manausmedMant;
+
+	@Column(name="TB_MANAUSMED_AANT")
+	private String manausmedAant;
+
+	@Column(name="TB_HASH")
+	private String hash;
+
+	@Column(name="TB_HASH_DATA")
+	private String hashData;
+
+	@Column(name="TB_INIVALID")
+	private String inivalid;
+
+	@Column(name="TB_FIMVALID")
+	private String fimvalid;
+
+	@Column(name="TB_PRE_REQ_CODCOL")
+	private String preReqCodcol;
+
+	@Column(name="TB_CARACT_NOVA_TAB_GANDESC")
+	private String caractNovaTabGandesc;
+
+	@Column(name="TB_EMPREGADOR_ORGAO_GANDESC")
+	private String empregadorOrgaoGandesc;
+
+	@Column(name="TB_TAB_GANDES_TIT_COMPL")
+	private String tabGandesTitCompl;
+
+	@Column(name="TB_ORGAO_GANDES_TIT_COMPL")
+	private String orgaoGandesTitCompl;
+
+	@Column(name="TB_ORG_VINC_02")
+	private String orgVinc02;
+
+	public Integer getOrgaoGandes() {
+		return orgaoGandes;
+	}
+
+	public void setOrgaoGandes(Integer orgaoGandes) {
+		this.orgaoGandes = orgaoGandes;
+	}
+
+	public Integer getOrgao() {
+		return orgao;
+	}
+
+	public void setOrgao(Integer orgao) {
+		this.orgao = orgao;
+	}
+
+	public Integer getCodGd() {
+		return codGd;
+	}
+
+	public void setCodGd(Integer codGd) {
+		this.codGd = codGd;
+	}
+
+	public Integer getCodRub() {
+		return codRub;
+	}
+
+	public void setCodRub(Integer codRub) {
+		this.codRub = codRub;
+	}
+
+	public String getNomeOutrasInc() {
+		return nomeOutrasInc;
+	}
+
+	public void setNomeOutrasInc(String nomeOutrasInc) {
+		this.nomeOutrasInc = nomeOutrasInc;
+	}
+
+	public String getHoraReativ() {
+		return horaReativ;
+	}
+
+	public void setHoraReativ(String horaReativ) {
+		this.horaReativ = horaReativ;
+	}
+
+	public String getCodTab() {
+		return codTab;
+	}
+
+	public void setCodTab(String codTab) {
+		this.codTab = codTab;
+	}
+
+	public String getTetoPerc() {
+		return tetoPerc;
+	}
+
+	public void setTetoPerc(String tetoPerc) {
+		this.tetoPerc = tetoPerc;
+	}
+
+	public String getTetoOutros() {
+		return tetoOutros;
+	}
+
+	public void setTetoOutros(String tetoOutros) {
+		this.tetoOutros = tetoOutros;
+	}
+
+	public String getPreReq() {
+		return preReq;
+	}
+
+	public void setPreReq(String preReq) {
+		this.preReq = preReq;
+	}
+
+	public String getVersaoTab() {
+		return versaoTab;
+	}
+
+	public void setVersaoTab(String versaoTab) {
+		this.versaoTab = versaoTab;
+	}
+
+	public String getTipoCadastramento() {
+		return tipoCadastramento;
+	}
+
+	public void setTipoCadastramento(String tipoCadastramento) {
+		this.tipoCadastramento = tipoCadastramento;
+	}
+
+	public String getTabGandesc() {
+		return tabGandesc;
+	}
+
+	public void setTabGandesc(String tabGandesc) {
+		this.tabGandesc = tabGandesc;
+	}
+
+	public String getCodConsig() {
+		return codConsig;
+	}
+
+	public void setCodConsig(String codConsig) {
+		this.codConsig = codConsig;
+	}
+
+	public String getCodGrupoEmpenho() {
+		return codGrupoEmpenho;
+	}
+
+	public void setCodGrupoEmpenho(String codGrupoEmpenho) {
+		this.codGrupoEmpenho = codGrupoEmpenho;
+	}
+
+	public String getHoraInc() {
+		return horaInc;
+	}
+
+	public void setHoraInc(String horaInc) {
+		this.horaInc = horaInc;
+	}
+
+	public String getHoraAlt() {
+		return horaAlt;
+	}
+
+	public void setHoraAlt(String horaAlt) {
+		this.horaAlt = horaAlt;
+	}
+
+	public String getHoraExc() {
+		return horaExc;
+	}
+
+	public void setHoraExc(String horaExc) {
+		this.horaExc = horaExc;
+	}
+
+	public String getClassificacaoDirfRais() {
+		return classificacaoDirfRais;
+	}
+
+	public void setClassificacaoDirfRais(String classificacaoDirfRais) {
+		this.classificacaoDirfRais = classificacaoDirfRais;
+	}
+
+	public String getTipoDotacao() {
+		return tipoDotacao;
+	}
+
+	public void setTipoDotacao(String tipoDotacao) {
+		this.tipoDotacao = tipoDotacao;
+	}
+
+	public String getOrgaoGandescSistAnt() {
+		return orgaoGandescSistAnt;
+	}
+
+	public void setOrgaoGandescSistAnt(String orgaoGandescSistAnt) {
+		this.orgaoGandescSistAnt = orgaoGandescSistAnt;
+	}
+
+	public String getTipoInfCompl() {
+		return tipoInfCompl;
+	}
+
+	public void setTipoInfCompl(String tipoInfCompl) {
+		this.tipoInfCompl = tipoInfCompl;
+	}
+
+	public String getTitCompl() {
+		return titCompl;
+	}
+
+	public void setTitCompl(String titCompl) {
+		this.titCompl = titCompl;
+	}
+
+	public String getTitAbrev() {
+		return titAbrev;
+	}
+
+	public void setTitAbrev(String titAbrev) {
+		this.titAbrev = titAbrev;
+	}
+
+	public String getTitCertidao() {
+		return titCertidao;
+	}
+
+	public void setTitCertidao(String titCertidao) {
+		this.titCertidao = titCertidao;
+	}
+
+	public String getGanInc() {
+		return ganInc;
+	}
+
+	public void setGanInc(String ganInc) {
+		this.ganInc = ganInc;
+	}
+
+	public String getVanInc() {
+		return vanInc;
+	}
+
+	public void setVanInc(String vanInc) {
+		this.vanInc = vanInc;
+	}
+
+	public String getDescInc() {
+		return descInc;
+	}
+
+	public void setDescInc(String descInc) {
+		this.descInc = descInc;
+	}
+
+	public String getInpsInc() {
+		return inpsInc;
+	}
+
+	public void setInpsInc(String inpsInc) {
+		this.inpsInc = inpsInc;
+	}
+
+	public String getIpaseaInc() {
+		return ipaseaInc;
+	}
+
+	public void setIpaseaInc(String ipaseaInc) {
+		this.ipaseaInc = ipaseaInc;
+	}
+
+	public String getIrenInc() {
+		return irenInc;
+	}
+
+	public void setIrenInc(String irenInc) {
+		this.irenInc = irenInc;
+	}
+
+	public String getFgtsInc() {
+		return fgtsInc;
+	}
+
+	public void setFgtsInc(String fgtsInc) {
+		this.fgtsInc = fgtsInc;
+	}
+
+	public String getContriSindInc() {
+		return contriSindInc;
+	}
+
+	public void setContriSindInc(String contriSindInc) {
+		this.contriSindInc = contriSindInc;
+	}
+
+	public String getPericInc() {
+		return pericInc;
+	}
+
+	public void setPericInc(String pericInc) {
+		this.pericInc = pericInc;
+	}
+
+	public String getLiqMin() {
+		return liqMin;
+	}
+
+	public void setLiqMin(String liqMin) {
+		this.liqMin = liqMin;
+	}
+
+	public String getSalInc() {
+		return salInc;
+	}
+
+	public void setSalInc(String salInc) {
+		this.salInc = salInc;
+	}
+
+	public String getCedulaC() {
+		return cedulaC;
+	}
+
+	public void setCedulaC(String cedulaC) {
+		this.cedulaC = cedulaC;
+	}
+
+	public String getIndRelcod() {
+		return indRelcod;
+	}
+
+	public void setIndRelcod(String indRelcod) {
+		this.indRelcod = indRelcod;
+	}
+
+	public String getProporc() {
+		return proporc;
+	}
+
+	public void setProporc(String proporc) {
+		this.proporc = proporc;
+	}
+
+	public String getOutrasInc() {
+		return outrasInc;
+	}
+
+	public void setOutrasInc(String outrasInc) {
+		this.outrasInc = outrasInc;
+	}
+
+	public String getRais() {
+		return rais;
+	}
+
+	public void setRais(String rais) {
+		this.rais = rais;
+	}
+
+	public String getIndCadastrado() {
+		return indCadastrado;
+	}
+
+	public void setIndCadastrado(String indCadastrado) {
+		this.indCadastrado = indCadastrado;
+	}
+
+	public String getTpInfor() {
+		return tpInfor;
+	}
+
+	public void setTpInfor(String tpInfor) {
+		this.tpInfor = tpInfor;
+	}
+
+	public String getRegraCalc() {
+		return regraCalc;
+	}
+
+	public void setRegraCalc(String regraCalc) {
+		this.regraCalc = regraCalc;
+	}
+
+	public String getTetoHr() {
+		return tetoHr;
+	}
+
+	public void setTetoHr(String tetoHr) {
+		this.tetoHr = tetoHr;
+	}
+
+	public String getTetoVlr() {
+		return tetoVlr;
+	}
+
+	public void setTetoVlr(String tetoVlr) {
+		this.tetoVlr = tetoVlr;
+	}
+
+	public String getOrdCalc() {
+		return ordCalc;
+	}
+
+	public void setOrdCalc(String ordCalc) {
+		this.ordCalc = ordCalc;
+	}
+
+	public String getCharacteri() {
+		return characteri;
+	}
+
+	public void setCharacteri(String characteri) {
+		this.characteri = characteri;
+	}
+
+	public String getIndTabCalc() {
+		return indTabCalc;
+	}
+
+	public void setIndTabCalc(String indTabCalc) {
+		this.indTabCalc = indTabCalc;
+	}
+
+	public String getDtUltUtilizacao() {
+		return dtUltUtilizacao;
+	}
+
+	public void setDtUltUtilizacao(String dtUltUtilizacao) {
+		this.dtUltUtilizacao = dtUltUtilizacao;
+	}
+
+	public String getCodVincGd() {
+		return codVincGd;
+	}
+
+	public void setCodVincGd(String codVincGd) {
+		this.codVincGd = codVincGd;
+	}
+
+	public String getSitGandes() {
+		return sitGandes;
+	}
+
+	public void setSitGandes(String sitGandes) {
+		this.sitGandes = sitGandes;
+	}
+
+	public String getTitPesq02() {
+		return titPesq02;
+	}
+
+	public void setTitPesq02(String titPesq02) {
+		this.titPesq02 = titPesq02;
+	}
+
+	public String getCampoInativo01() {
+		return campoInativo01;
+	}
+
+	public void setCampoInativo01(String campoInativo01) {
+		this.campoInativo01 = campoInativo01;
+	}
+
+	public String getRestricaoAtualizacao() {
+		return restricaoAtualizacao;
+	}
+
+	public void setRestricaoAtualizacao(String restricaoAtualizacao) {
+		this.restricaoAtualizacao = restricaoAtualizacao;
+	}
+
+	public String getOperadorInc() {
+		return operadorInc;
+	}
+
+	public void setOperadorInc(String operadorInc) {
+		this.operadorInc = operadorInc;
+	}
+
+	public String getDataInc() {
+		return dataInc;
+	}
+
+	public void setDataInc(String dataInc) {
+		this.dataInc = dataInc;
+	}
+
+	public String getOperadorAlt() {
+		return operadorAlt;
+	}
+
+	public void setOperadorAlt(String operadorAlt) {
+		this.operadorAlt = operadorAlt;
+	}
+
+	public String getDataAlt() {
+		return dataAlt;
+	}
+
+	public void setDataAlt(String dataAlt) {
+		this.dataAlt = dataAlt;
+	}
+
+	public String getOperadorExc() {
+		return operadorExc;
+	}
+
+	public void setOperadorExc(String operadorExc) {
+		this.operadorExc = operadorExc;
+	}
+
+	public String getDataExc() {
+		return dataExc;
+	}
+
+	public void setDataExc(String dataExc) {
+		this.dataExc = dataExc;
+	}
+
+	public String getOperadorReativ() {
+		return operadorReativ;
+	}
+
+	public void setOperadorReativ(String operadorReativ) {
+		this.operadorReativ = operadorReativ;
+	}
+
+	public String getDataReativ() {
+		return dataReativ;
+	}
+
+	public void setDataReativ(String dataReativ) {
+		this.dataReativ = dataReativ;
+	}
+
+	public String getExecucaoTetoNaoUsado() {
+		return execucaoTetoNaoUsado;
+	}
+
+	public void setExecucaoTetoNaoUsado(String execucaoTetoNaoUsado) {
+		this.execucaoTetoNaoUsado = execucaoTetoNaoUsado;
+	}
+
+	public String getIncideTetoNaoUsado() {
+		return incideTetoNaoUsado;
+	}
+
+	public void setIncideTetoNaoUsado(String incideTetoNaoUsado) {
+		this.incideTetoNaoUsado = incideTetoNaoUsado;
+	}
+
+	public String getMargemInc() {
+		return margemInc;
+	}
+
+	public void setMargemInc(String margemInc) {
+		this.margemInc = margemInc;
+	}
+
+	public String getValeTranspInc() {
+		return valeTranspInc;
+	}
+
+	public void setValeTranspInc(String valeTranspInc) {
+		this.valeTranspInc = valeTranspInc;
+	}
+
+	public String getTetoInc() {
+		return tetoInc;
+	}
+
+	public void setTetoInc(String tetoInc) {
+		this.tetoInc = tetoInc;
+	}
+
+	public String getSalCcInc() {
+		return salCcInc;
+	}
+
+	public void setSalCcInc(String salCcInc) {
+		this.salCcInc = salCcInc;
+	}
+
+	public String getDocumento() {
+		return documento;
+	}
+
+	public void setDocumento(String documento) {
+		this.documento = documento;
+	}
+
+	public String getAbonoNatalino() {
+		return abonoNatalino;
+	}
+
+	public void setAbonoNatalino(String abonoNatalino) {
+		this.abonoNatalino = abonoNatalino;
+	}
+
+	public String getInssSal() {
+		return inssSal;
+	}
+
+	public void setInssSal(String inssSal) {
+		this.inssSal = inssSal;
+	}
+
+	public String getAmazonSal() {
+		return amazonSal;
+	}
+
+	public void setAmazonSal(String amazonSal) {
+		this.amazonSal = amazonSal;
+	}
+
+	public String getIrSal() {
+		return irSal;
+	}
+
+	public void setIrSal(String irSal) {
+		this.irSal = irSal;
+	}
+
+	public String getFerias() {
+		return ferias;
+	}
+
+	public void setFerias(String ferias) {
+		this.ferias = ferias;
+	}
+
+	public String getFeriasCc() {
+		return feriasCc;
+	}
+
+	public void setFeriasCc(String feriasCc) {
+		this.feriasCc = feriasCc;
+	}
+
+	public String getFgtsSal() {
+		return fgtsSal;
+	}
+
+	public void setFgtsSal(String fgtsSal) {
+		this.fgtsSal = fgtsSal;
+	}
+
+	public String getFaltas() {
+		return faltas;
+	}
+
+	public void setFaltas(String faltas) {
+		this.faltas = faltas;
+	}
+
+	public String getSalFam() {
+		return salFam;
+	}
+
+	public void setSalFam(String salFam) {
+		this.salFam = salFam;
+	}
+
+	public String getAuxAlim() {
+		return auxAlim;
+	}
+
+	public void setAuxAlim(String auxAlim) {
+		this.auxAlim = auxAlim;
+	}
+
+	public String getNaturezaRubrica() {
+		return naturezaRubrica;
+	}
+
+	public void setNaturezaRubrica(String naturezaRubrica) {
+		this.naturezaRubrica = naturezaRubrica;
+	}
+
+	public String getCaracNova() {
+		return caracNova;
+	}
+
+	public void setCaracNova(String caracNova) {
+		this.caracNova = caracNova;
+	}
+
+	public String getTipoAgrupamento() {
+		return tipoAgrupamento;
+	}
+
+	public void setTipoAgrupamento(String tipoAgrupamento) {
+		this.tipoAgrupamento = tipoAgrupamento;
+	}
+
+	public String getClassifGan() {
+		return classifGan;
+	}
+
+	public void setClassifGan(String classifGan) {
+		this.classifGan = classifGan;
+	}
+
+	public String getRescisao() {
+		return rescisao;
+	}
+
+	public void setRescisao(String rescisao) {
+		this.rescisao = rescisao;
+	}
+
+	public String getEmpregadorId() {
+		return empregadorId;
+	}
+
+	public void setEmpregadorId(String empregadorId) {
+		this.empregadorId = empregadorId;
+	}
+
+	public String getValidadoEsocial() {
+		return validadoEsocial;
+	}
+
+	public void setValidadoEsocial(String validadoEsocial) {
+		this.validadoEsocial = validadoEsocial;
+	}
+
+	public String getTprubrEsocial() {
+		return tprubrEsocial;
+	}
+
+	public void setTprubrEsocial(String tprubrEsocial) {
+		this.tprubrEsocial = tprubrEsocial;
+	}
+
+	public String getCargoComissionado() {
+		return cargoComissionado;
+	}
+
+	public void setCargoComissionado(String cargoComissionado) {
+		this.cargoComissionado = cargoComissionado;
+	}
+
+	public String getCodinccpCodigoEsocial() {
+		return codinccpCodigoEsocial;
+	}
+
+	public void setCodinccpCodigoEsocial(String codinccpCodigoEsocial) {
+		this.codinccpCodigoEsocial = codinccpCodigoEsocial;
+	}
+
+	public String getCodincirrfCodigoEsocial() {
+		return codincirrfCodigoEsocial;
+	}
+
+	public void setCodincirrfCodigoEsocial(String codincirrfCodigoEsocial) {
+		this.codincirrfCodigoEsocial = codincirrfCodigoEsocial;
+	}
+
+	public String getCodincfgtsCodigoEsocial() {
+		return codincfgtsCodigoEsocial;
+	}
+
+	public void setCodincfgtsCodigoEsocial(String codincfgtsCodigoEsocial) {
+		this.codincfgtsCodigoEsocial = codincfgtsCodigoEsocial;
+	}
+
+	public String getCodincsindCodigoEsocial() {
+		return codincsindCodigoEsocial;
+	}
+
+	public void setCodincsindCodigoEsocial(String codincsindCodigoEsocial) {
+		this.codincsindCodigoEsocial = codincsindCodigoEsocial;
+	}
+
+	public String getObservacaoEsocial() {
+		return observacaoEsocial;
+	}
+
+	public void setObservacaoEsocial(String observacaoEsocial) {
+		this.observacaoEsocial = observacaoEsocial;
+	}
+
+	public String getCodincrmCodigoEsocial() {
+		return codincrmCodigoEsocial;
+	}
+
+	public void setCodincrmCodigoEsocial(String codincrmCodigoEsocial) {
+		this.codincrmCodigoEsocial = codincrmCodigoEsocial;
+	}
+
+	public String getTetoremunEsocial() {
+		return tetoremunEsocial;
+	}
+
+	public void setTetoremunEsocial(String tetoremunEsocial) {
+		this.tetoremunEsocial = tetoremunEsocial;
+	}
+
+	public String getPensao() {
+		return pensao;
+	}
+
+	public void setPensao(String pensao) {
+		this.pensao = pensao;
+	}
+
+	public String getTipoCodigo() {
+		return tipoCodigo;
+	}
+
+	public void setTipoCodigo(String tipoCodigo) {
+		this.tipoCodigo = tipoCodigo;
+	}
+
+	public String getManausmed() {
+		return manausmed;
+	}
+
+	public void setManausmed(String manausmed) {
+		this.manausmed = manausmed;
+	}
+
+	public String getManausmedMant() {
+		return manausmedMant;
+	}
+
+	public void setManausmedMant(String manausmedMant) {
+		this.manausmedMant = manausmedMant;
+	}
+
+	public String getManausmedAant() {
+		return manausmedAant;
+	}
+
+	public void setManausmedAant(String manausmedAant) {
+		this.manausmedAant = manausmedAant;
+	}
+
+	public String getHash() {
+		return hash;
+	}
+
+	public void setHash(String hash) {
+		this.hash = hash;
+	}
+
+	public String getHashData() {
+		return hashData;
+	}
+
+	public void setHashData(String hashData) {
+		this.hashData = hashData;
+	}
+
+	public String getInivalid() {
+		return inivalid;
+	}
+
+	public void setInivalid(String inivalid) {
+		this.inivalid = inivalid;
+	}
+
+	public String getFimvalid() {
+		return fimvalid;
+	}
+
+	public void setFimvalid(String fimvalid) {
+		this.fimvalid = fimvalid;
+	}
+
+	public String getPreReqCodcol() {
+		return preReqCodcol;
+	}
+
+	public void setPreReqCodcol(String preReqCodcol) {
+		this.preReqCodcol = preReqCodcol;
+	}
+
+	public String getCaractNovaTabGandesc() {
+		return caractNovaTabGandesc;
+	}
+
+	public void setCaractNovaTabGandesc(String caractNovaTabGandesc) {
+		this.caractNovaTabGandesc = caractNovaTabGandesc;
+	}
+
+	public String getEmpregadorOrgaoGandesc() {
+		return empregadorOrgaoGandesc;
+	}
+
+	public void setEmpregadorOrgaoGandesc(String empregadorOrgaoGandesc) {
+		this.empregadorOrgaoGandesc = empregadorOrgaoGandesc;
+	}
+
+	public String getTabGandesTitCompl() {
+		return tabGandesTitCompl;
+	}
+
+	public void setTabGandesTitCompl(String tabGandesTitCompl) {
+		this.tabGandesTitCompl = tabGandesTitCompl;
+	}
+
+	public String getOrgaoGandesTitCompl() {
+		return orgaoGandesTitCompl;
+	}
+
+	public void setOrgaoGandesTitCompl(String orgaoGandesTitCompl) {
+		this.orgaoGandesTitCompl = orgaoGandesTitCompl;
+	}
+
+	public String getOrgVinc02() {
+		return orgVinc02;
+	}
+
+	public void setOrgVinc02(String orgVinc02) {
+		this.orgVinc02 = orgVinc02;
+	}
+
+}

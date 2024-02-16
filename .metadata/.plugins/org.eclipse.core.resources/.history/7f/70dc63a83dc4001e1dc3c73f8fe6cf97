@@ -1,0 +1,21 @@
+package br.gov.am.prodam.folha.routes;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
+public class RoutesApiConfig {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String uri;
+    private String predicates;
+    private String filters;
+
+    // Getters e setters
+    
+}

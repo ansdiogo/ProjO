@@ -1,0 +1,28 @@
+package br.gov.am.prodam.folha.routes;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+/*
+ * Para testes simples acessar via GET http://localhost:8010/routes
+ * para testes via ApiGatewayService acessar 
+ *      via GET http://localhost:8081/api/folha-route/routes
+ *      		http://localhost:8081/api/{ALIAS}    /{ROTA}
+ * Para Armazenar dados acessar via PUT http://localhost:8010/routes
+ * em Body colocar os seguintes dados:
+		{
+		    "id": "FOLHA-CALCULO-SERVICE2",
+		    "uri": "http://localhost:6062",
+		    "predicates": "[{\"name\": \"Path\", \"args\": {\"_genkey_0\": \"/rest/\"}}]",
+		    "filters": "[{\"name\": \"StripPrefix\", \"args\": 
+		    			{\"_genkey_0\": \"1\"}}, 
+		    			{\"name\": \"RequestSize\", \"args\": {\"maxSize\": \"5000000\"}}]"
+		}
+ * */
+@SpringBootApplication
+public class RoutesApiConfigApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(RoutesApiConfigApplication.class, args);
+	}
+}

@@ -1,0 +1,25 @@
+package br.gov.am.prodam.folha.routes.model;
+
+import java.io.Serializable;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "ROUTE_FOLHA")
+public class RoutesApiConfig implements Serializable{
+	
+    /**
+	 * 
+	 */
+	//private static final long serialVersionUID = 1L;
+	@Id
+    private String id;
+    private String uri;
+    private String predicates;
+    private String filters;
+ 
+    // Getters e setters
+
+}

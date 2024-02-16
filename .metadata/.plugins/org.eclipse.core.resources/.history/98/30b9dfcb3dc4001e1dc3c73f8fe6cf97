@@ -1,0 +1,19 @@
+package br.gov.am.prodam.folha.routes;
+
+import com.example.myapp.entity.Produto;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class RoutesRepository {
+
+    @PersistenceContext
+    private EntityManager em;
+
+    public Produto salvar(Produto produto) {
+        return em.merge(produto);
+    }
+
+    // Outros métodos de consulta, atualização, exclusão, etc.
+}

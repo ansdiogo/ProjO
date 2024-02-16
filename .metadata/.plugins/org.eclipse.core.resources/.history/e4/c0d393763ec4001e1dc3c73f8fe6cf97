@@ -1,0 +1,24 @@
+package br.gov.am.prodam.folha.routes;
+
+package br.gov.am.prodam.folha.routes;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class RoutesConfigService {
+
+    private final RoutesConfigService apiConfigRepository;
+
+    @Autowired
+    public RoutesConfigService(ApiConfigRepository apiConfigRepository) {
+        this.apiConfigRepository = apiConfigRepository;
+    }
+
+    public RoutesApiConfig salvarApiConfig(RoutesApiConfig apiConfig) {
+        // Validações e lógica de negócios aqui
+        return apiConfigRepository.salvar(apiConfig);
+    }
+
+    // Outros métodos de serviço
+}

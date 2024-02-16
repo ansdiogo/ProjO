@@ -1,0 +1,5 @@
+package br.gov.am.prodam.folha.routes;
+
+public class Produto {
+
+}

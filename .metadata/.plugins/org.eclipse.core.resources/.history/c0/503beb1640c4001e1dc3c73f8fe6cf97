@@ -1,0 +1,13 @@
+package br.gov.am.prodam.folha.routes;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class RoutesApiApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}

@@ -1,0 +1,36 @@
+package br.gov.am.prodam.folhacalculoms.model;
+
+import java.io.Serializable;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.Data;
+
+@Data
+@Entity
+@Table(name = "SPRH_PCCR_CARGO_RUBRICA")
+public class PCCRServidor implements Serializable {
+	@Id
+	@Column(name="PCS_MATRICULA", nullable=false)
+	private String matricula;
+
+	@Column(name="PCS_PLANO_SALARIAL", nullable=false)
+	private Integer planoSalarial;
+
+	@Column(name="PCS_CARGO", nullable=false)
+	private Integer cargo;
+
+	@Column(name="PCS_LINHA", nullable=false)
+	private Integer linha;
+
+	@Column(name="PCS_COLUNA", nullable=false)
+	private Integer coluna;
+
+	@Column(name="PCS_STATUS")
+	private String status;
+
+	@Column(name="PCS_CANCELADO", nullable=false)
+	private String cancelado;
+}

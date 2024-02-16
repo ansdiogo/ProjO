@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;api-gateway-service/src/main/java/com/api/gateway/apigatewayservice/config/GatewayConfig&apos; to &apos;GatewayConfig.java&apos;" description="Rename resource &apos;GatewayConfig&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/java/com/api/gateway/apigatewayservice/config/GatewayConfig" name="GatewayConfig.java" stamp="1706631104356" updateReferences="true"/>
+</session>

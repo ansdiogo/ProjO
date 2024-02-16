@@ -1,0 +1,43 @@
+package br.gov.am.prodam.folhacalculoms.model;
+
+import java.io.Serializable;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.Data;
+
+@Data
+@Entity
+@Table(name = "SPRH_PCCR_CARGO_RUBRICA")
+public class PCCRCargoRubrica {
+	@Id
+	@Column(name="CGV_ID_PLANO", nullable=false)
+	private BigDecimal idPlano;
+
+	@Column(name="CGV_COD_CARGO", nullable=false)
+	private BigDecimal codCargo;
+
+	@Column(name="CGV_LINHA", nullable=false)
+	private BigDecimal linha;
+
+	@Column(name="CGV_COLUNA", nullable=false)
+	private BigDecimal coluna;
+
+	@Column(name="CGV_RUBRICA", nullable=false)
+	private BigDecimal rubrica;
+
+	@Column(name="CGV_VALOR")
+	private BigDecimal valor;
+
+	@Column(name="CGV_TIPO_INF")
+	private String tipoInf;
+
+	@Column(name="CGV_CANCELADO", nullable=false)
+	private String cancelado;
+
+	@Column(name="CGV_STATUS", nullable=false)
+	private String status;
+
+}

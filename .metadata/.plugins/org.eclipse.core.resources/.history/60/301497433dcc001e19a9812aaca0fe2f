@@ -1,0 +1,52 @@
+package br.gov.am.prodam.folha.routes.model;
+
+import java.io.Serializable;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "ROUTE_FOLHA")
+public class RoutesApiConfig implements Serializable{
+	//private static final long serialVersionUID = 1L;
+	@Id
+    private String id;
+    private String uri;
+    private String predicates;
+    private String filters;
+    private String alias;
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public String getUri() {
+		return uri;
+	}
+	public void setUri(String uri) {
+		this.uri = uri;
+	}
+	public String getPredicates() {
+		return converteString(predicates);
+	}
+	public void setPredicates(String predicates) {
+		this.predicates = predicates;
+	}
+	public String getFilters() {
+		return converteString(filters);
+	}
+	public void setFilters(String filters) {
+		this.filters = filters;
+	}
+	public String getAlias() {
+		return alias;
+	}
+	public void setAlias(String alias) {
+		this.alias = alias;
+	}
+	public String converteString(String texto) {
+		return texto.replaceAll("\\", " ");
+	}
+}

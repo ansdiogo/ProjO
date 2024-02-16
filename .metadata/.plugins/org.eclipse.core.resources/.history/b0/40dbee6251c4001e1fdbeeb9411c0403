@@ -1,0 +1,53 @@
+package br.gov.am.prodam.folha.routes;
+
+import java.util.List;
+
+import org.springframework.util.RouteMatcher.Route;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+
+@RestController
+@RequestMapping("/routes")
+public class RoutesApiConfigController {
+
+    private final RoutesApiConfigRepository routeRepository;
+
+    public RoutesApiConfigController(RoutesApiConfigRepository routeRepository) {
+        this.routeRepository = routeRepository;
+    }
+
+    @PostMapping
+    public RoutesApiConfig create(@RequestBody RoutesApiConfig route) {
+        return routeRepository.save(route); 
+    }
+
+    @GetMapping
+    public List<RoutesApiConfig> getAll() {
+        return routeRepository.findAll();
+    }
+
+    // Adicione aqui os métodos para atualizar e deletar
+}
+/*
+@RestController
+public class RoutesApiConfigController {
+
+    private final RoutesApiConfigService apiConfigService;
+
+    @Autowired
+    public RoutesApiConfigController(RoutesApiConfigService apiConfigService) {
+        this.apiConfigService = apiConfigService;
+    }
+
+    @PostMapping("/routes")
+    public RoutesApiConfig criarApiConfig(@RequestBody RoutesApiConfig apiConfig) {
+        return apiConfigService.salvarApiConfig(apiConfig);
+    }
+
+    // Outros endpoints e métodos de controle
+}
+*/

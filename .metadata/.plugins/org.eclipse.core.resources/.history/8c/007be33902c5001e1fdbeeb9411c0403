@@ -1,0 +1,38 @@
+package br.gov.am.prodam.folhacalculoms.model;
+
+import java.io.Serializable;
+import java.math.BigDecimal;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "CFPP_GANHOS_DESCONTOS") 
+public class GanhosDescontos implements Serializable {
+	private static final long serialVersionUID = 1L;
+	
+	@Id
+	@Column(name="TB_ORGAO_GANDES")
+	private BigDecimal orgaoGandes;
+
+	@Column(name="TB_ORGAO")
+	private BigDecimal orgao;
+
+	@Column(name="TB_COD_GD")
+	private BigDecimal codGd;
+
+	@Column(name="COD_RUB")
+	private BigDecimal codRub;
+
+	@Column(name="TB_NOME_OUTRAS_INC")
+	private String nomeOutrasInc;
+
+	@Column(name="TB_HORA_REATIV")
+	private String horaReativ;
+
+	@Column(name="TB_COD_TAB")
+	private String codTab;
+
+}

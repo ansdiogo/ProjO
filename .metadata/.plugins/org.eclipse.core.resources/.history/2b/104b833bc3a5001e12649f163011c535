@@ -1,0 +1,111 @@
+package src.main.java;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+
+public class Main {/*
+    public static void main(String[] args) {
+        ExcelReader excelReader = new ExcelReader();
+        CreateTableScript createTableScript = new CreateTableScript();
+        String path = "C:\\Users\\Diogo\\Downloads\\";
+        String filenameIn = path + "pcast2023.xls";
+        String filenameOut = path + "Tabela_GANDESC.sql";
+        try {
+            Path filePath = Paths.get(filenameOut);
+            BufferedWriter writer = Files.newBufferedWriter(filePath, StandardCharsets.UTF_8);
+            String str = createTableScript.createTable() + "\n" + excelReader.generateData(filenameIn);
+            ScriptSql.runScriptSql(filenameOut);
+            writer.write(str);
+            writer.close();
+        } catch (IOException | SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}
+public class CSVToOracleScriptConverter {*/
+
+    public static void main(String[] args) {
+    	String path = "C:\\Users\\Diogo\\Downloads\\";
+        String inputFilePath =  path + "pcast2023.csv";
+        String outputFilePath = path + "Tabela_GANDESC.sql";
+
+        try {
+            convertCSVToOracleScript(inputFilePath, outputFilePath);
+            System.out.println("Conversão concluída com sucesso.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void convertCSVToOracleScript(String inputFilePath, String outputFilePath) throws IOException {
+        try (BufferedReader reader = new BufferedReader(new FileReader(inputFilePath));
+             FileWriter writer = new FileWriter(outputFilePath)) {
+
+
+        	String headerLine = reader.readLine(); // Ler a linha de cabeçalho
+			String[] columnNames = headerLine.split(";");//headerLine.split(",");
+            String header = reader.readLine();
+            
+            System.out.println(header);
+
+            String line;
+            boolean firstLine = true;
+            while ((line = reader.readLine()) != null) {
+                if (firstLine) {
+                    firstLine = false;
+                    continue;
+                }
+                String[] values = line.split(";"); //line.split(",");
+                String transformedData = transformData(values, columnNames);
+
+                writer.write(transformedData);
+                writer.write("\n"); 
+            }
+        }
+    }
+
+    private static String transformData(String[] values, String[] columnNames) {
+        // Supondo que o CSV pode ter qualquer número de colunas
+
+        StringBuilder sqlStatement = new StringBuilder();
+        String nomeDaTabela = "TAB_pcast2023";
+        sqlStatement.append("INSERT INTO "+nomeDaTabela+" (");
+
+        /* // Adicionar nomes de colunas à instrução SQL
+        for (int i = 0; i < values.length; i++) {
+            sqlStatement.append("coluna").append(i + 1);
+
+            if (i < values.length - 1) {
+                sqlStatement.append(", ");
+            }
+        }*/
+        // Adicionar nomes de colunas à instrução SQL
+        for (int i = 0; i < columnNames.length; i++) {
+            sqlStatement.append(columnNames[i]);
+
+            if (i < columnNames.length - 1) {
+                sqlStatement.append(", ");
+            }
+        }
+
+        sqlStatement.append(") VALUES (");
+
+        // Adicionar valores à instrução SQL
+        for (int i = 0; i < values.length; i++) {
+            sqlStatement.append("'").append(values[i]).append("'");
+
+            if (i < values.length - 1) {
+                sqlStatement.append(", ");
+            }
+        }
+
+        sqlStatement.append(");");
+
+        return sqlStatement.toString();
+    }
+}

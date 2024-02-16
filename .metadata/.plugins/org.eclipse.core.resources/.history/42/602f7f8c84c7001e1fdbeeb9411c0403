@@ -1,0 +1,9 @@
+package com.api.gateway.apigatewayservice.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.api.gateway.apigatewayservice.model.RouteConfig;
+
+public interface RouteConfigRepository extends JpaRepository<RouteConfig, String>{
+	//Consultas default
+}

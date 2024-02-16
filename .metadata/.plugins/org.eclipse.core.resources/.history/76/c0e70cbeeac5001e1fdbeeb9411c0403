@@ -1,0 +1,58 @@
+package br.gov.am.prodam.folha.routes.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import br.gov.am.prodam.folha.routes.model.RoutesApiConfig;
+import br.gov.am.prodam.folha.routes.repository.RoutesApiConfigRepository;
+import br.gov.am.prodam.folha.routes.service.RoutesApiConfigService;
+
+//@RequestMapping("/api/routes")
+@RestController
+@RequestMapping("/routes")
+public class RoutesApiConfigController {
+    private final RoutesApiConfigService service;
+    private final RoutesApiConfigRepository routeRepository;
+
+    @Autowired
+    public RoutesApiConfigController(RoutesApiConfigService service, RoutesApiConfigRepository routeRepository) {
+        this.service = service;
+		this.routeRepository = routeRepository;
+    }
+
+	/*
+	 * @Autowired public RoutesApiConfigController(RoutesApiConfigRepository
+	 * routeRepository) { this.routeRepository = routeRepository; }
+	 */
+    /** 
+    * Realiza a Rota
+    * @param Rotas 
+    * @return Confirma a criação da Rota
+    */
+    @PostMapping
+    public ResponseEntity<RoutesApiConfig> create(@RequestBody RoutesApiConfig route123) {
+		try {
+	    	if (route123.getId() == null || route123.getUri() == null || route123.getPredicates() == null || route123.getFilters() == null) {
+	            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+	        }
+		} catch (Exception e) {} 
+        return new ResponseEntity<>(routeRepository.save(route123), HttpStatus.CREATED);
+    }
+
+    /** 
+    * Realiza a Listagem de todas as Rotas
+    * @return Confirma todos os itens em uma listas
+    */
+    @GetMapping
+    public List<RoutesApiConfig> getAll() {
+        return routeRepository.findAll();
+    }
+}

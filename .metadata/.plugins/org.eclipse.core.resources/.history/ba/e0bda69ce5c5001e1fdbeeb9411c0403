@@ -1,0 +1,10 @@
+package br.gov.am.prodam.folha.routes.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import br.gov.am.prodam.folha.routes.model.RoutesApiConfig;
+
+@Repository
+public interface RoutesApiConfigRepository extends JpaRepository<RoutesApiConfig, Long>{
+}

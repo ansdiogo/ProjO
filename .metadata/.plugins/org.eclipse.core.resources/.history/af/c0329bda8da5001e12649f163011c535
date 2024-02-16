@@ -1,0 +1,30 @@
+package src.main.java;
+
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.sql.SQLException;
+
+
+public class Main {
+    public static void main(String[] args) {
+        ExcelReader excelReader = new ExcelReader();
+        CreateTableScript createTableScript = new CreateTableScript();
+        String path = "C:\\Users\\Diogo\\Downloads\\";
+        String filenameIn = path + "pcast2023.xls";
+        String filenameOut = path + "Tabela_GANDESC.sql";
+        try {
+            Path filePath = Paths.get(filenameOut);
+            BufferedWriter writer = Files.newBufferedWriter(filePath, StandardCharsets.UTF_8);
+            String str = createTableScript.createTable() + "\n" + excelReader.generateData(filenameIn);
+            ScriptSql.runScriptSql(filenameOut);
+            writer.write(str);
+            writer.close();
+        } catch (IOException | SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}

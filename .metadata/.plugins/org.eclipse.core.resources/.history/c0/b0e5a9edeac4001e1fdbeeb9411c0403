@@ -1,0 +1,20 @@
+package br.gov.am.prodam.folha.routes;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class RoutesApiConfigService {
+
+    @SuppressWarnings("unused")
+	private final RoutesApiConfigRepository apiConfigRepository;
+
+    @Autowired
+    public RoutesApiConfigService(RoutesApiConfigRepository apiConfigRepository) {
+        this.apiConfigRepository = apiConfigRepository;
+    }
+/*
+    public RoutesApiConfig salvarApiConfig(RoutesApiConfig apiConfig) {
+        return apiConfigRepository.salvar(apiConfig);
+    }*/
+}
